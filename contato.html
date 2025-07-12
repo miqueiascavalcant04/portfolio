@@ -38,6 +38,36 @@
     .btn-primary:hover {
       background-color: #1a6ed8;
     }
+    /* Seção contatos */
+    .contatos {
+      background-color: #1f1f1f;
+      padding: 40px 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+    .contatos ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contatos a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s;
+    }
+    .contatos a:hover {
+      color: #3399ff;
+    }
+    .contatos i {
+      font-size: 1.5rem;
+    }
   </style>
 </head>
 <body>
@@ -58,10 +88,14 @@
     </div>
   </nav>
 
-  <main>
-    <section class="formulario container" data-aos="fade-up">
+  <main class="container" data-aos="fade-up">
+    <section class="formulario">
       <h2 class="mb-4 text-center">Fale comigo</h2>
       <form action="https://formsubmit.co/03c6914f0193b052aa5fbe9d02a08907" method="POST">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_replyto" value="email" />
+        <input type="hidden" name="_next" value="https://miqueiascavalcant04.github.io/portfolio/obrigado.html" />
+
         <div class="mb-3">
           <label for="nome" class="form-label">Nome:</label>
           <input type="text" id="nome" name="nome" class="form-control" required />
@@ -79,6 +113,37 @@
 
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
+    </section>
+
+    <section class="contatos mt-5">
+      <h2 class="text-center mb-4">Outras formas de contato</h2>
+      <ul>
+        <li>
+          <a href="mailto:miqueiascavalcante417@gmail.com" target="_blank" rel="noopener">
+            <i class="bi bi-envelope-fill"></i> Email
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/miqueias-cavalcanti-52a223214/" target="_blank" rel="noopener">
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/miqueiascavalcant04" target="_blank" rel="noopener">
+            <i class="bi bi-github"></i> GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/5592982158707" target="_blank" rel="noopener">
+            <i class="bi bi-whatsapp"></i> WhatsApp
+          </a>
+        </li>
+        <li>
+          <a href="tel:+5592982158707">
+            <i class="bi bi-telephone-fill"></i> Telefone
+          </a>
+        </li>
+      </ul>
     </section>
   </main>
 
