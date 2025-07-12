@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miqueias Crispim | Portfólio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .navbar {
+      background-color: #1f1f1f !important;
+    }
+    footer {
+      background-color: #1f1f1f;
+      color: #bbb;
+      padding: 20px 10px;
+      margin-top: 50px;
+      text-align: center;
+    }
+    a.nav-link, a.nav-link.active {
+      color: #e0e0e0;
+    }
+    a.nav-link:hover {
+      color: #3399ff;
+    }
+
+    .hero {
+      padding: 100px 20px;
+      background-color: #1a1a1a;
+      text-align: center;
+      color: #f5f5f5;
+    }
+
+    .btn-primary {
+      background-color: #3399ff;
+      border-color: #3399ff;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #1a6ed8;
+      border-color: #1a6ed8;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    .bg-dark-section {
+      background-color: #1a1a1a;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+
+    .skills .badge {
+      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 20px;
+      background-color: #3399ff;
+      margin: 5px;
+    }
+
+    .card {
+      background-color: #222;
+      border: none;
+      color: #ddd;
+      transition: transform 0.3s;
+      cursor: default;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(51, 153, 255, 0.6);
+    }
+
+    .card .card-title {
+      color: #3399ff;
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .btn-project {
+      background-color: #3399ff;
+      border: none;
+      width: 100%;
+    }
+
+    .btn-project:hover {
+      background-color: #1a6ed8;
+    }
+
+    .quick-contact {
+      text-align: center;
+      color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Miqueias Crispim</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-3">Desenvolvedor de Software</h1>
+      <p class="lead mb-4">Crio soluções digitais com paixão e propósito.</p>
+      <a href="#projects" class="btn btn-primary btn-lg">Ver Projetos</a>
+    </div>
+  </section>
+
+  <!-- Sobre Mim -->
+  <section id="about" class="about bg-dark-section text-center" data-aos="fade-right">
+    <div class="container">
+      <h2 class="mb-4">Sobre Mim</h2>
+      <p>
+        Olá! Sou Miqueias Crispim, desenvolvedor apaixonado por transformar ideias em código funcional e elegante.
+        Tenho experiência em desenvolvimento web e mobile, sempre buscando aprender novas tecnologias para entregar soluções eficientes e de qualidade.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="skills text-center" data-aos="fade-left">
+    <div class="container">
+      <h2 class="mb-4">Tecnologias</h2>
+      <div class="d-flex flex-wrap justify-content-center">
+        <span class="badge">Python</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">React</span>
+        <span class="badge">Bootstrap</span>
+        <span class="badge">Flask</span>
+        <span class="badge">Kotlin</span>
+        <span class="badge">HTML5</span>
+        <span class="badge">CSS3</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos em Destaque -->
+  <section id="projects" class="featured-projects bg-dark-section" data-aos="zoom-in">
+    <div class="container">
+      <h2 class="text-center mb-5">Projetos em Destaque</h2>
+      <div class="row g-4">
+        <!-- Projeto 1 -->
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1581093588401-d4d6b690f1f9?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sistema de Inventário" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Sistema de Inventário <i class="bi bi-box-seam"></i></h5>
+              <p class="card-text flex-grow-1">Web app para registrar e controlar toners com Flask.</p>
+              <a href="https://github.com/seuusuario/sistema-inventario" target="_blank" class="btn btn-project mt-auto">
+                <i class="bi bi-github"></i> Ver Código
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Projeto 2 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1523475496153-3b1d8e41c6ae?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Aplicativo de Finanças" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Aplicativo de Finanças <i class="bi bi-wallet2"></i></h5>
+              <p class="card-text flex-grow-1">App Android para controle de receitas e despesas.</p>
+              <a href="https://github.com/seuusuario/app-financas" target="_blank" class="btn btn-project mt-auto">
+                <i class="bi bi-github"></i> Ver Código
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Projeto 3 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Site da Igreja" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Site da Igreja <i class="bi bi-building"></i></h5>
+              <p class="card-text flex-grow-1">Site institucional feito com HTML, CSS e PHP.</p>
+              <a href="https://github.com/seuusuario/site-igreja" target="_blank" class="btn btn-project mt-auto">
+                <i class="bi bi-github"></i> Ver Código
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato Rápido -->
+  <section id="contact" class="quick-contact py-5" data-aos="fade-up">
+    <div class="container text-center">
+      <h2 class="mb-4">Quer conversar?</h2>
+      <a href="contato.html" class="btn btn-primary btn-lg">Entre em contato</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Miqueias Crispim. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
