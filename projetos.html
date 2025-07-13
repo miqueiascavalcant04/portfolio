@@ -11,14 +11,28 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    body {
-      background-color: #121212;
+    /* Fundo universo animado */
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      background: #000;
       color: #e0e0e0;
       font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 0;
+    }
+    canvas#starfield {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      display: block;
     }
 
     .navbar {
       background-color: #1f1f1f !important;
+      z-index: 10;
     }
 
     a.nav-link, a.nav-link.active {
@@ -34,10 +48,12 @@
     }
 
     .card {
-      background-color: #222;
+      background-color: rgba(34, 34, 34, 0.85);
       border: none;
       color: #ddd;
       transition: transform 0.3s;
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
     }
 
     .card:hover {
@@ -51,8 +67,8 @@
 
     video.card-img-top, .card video {
       height: 200px;
-      object-fit: cover;
       width: 100%;
+      object-fit: cover;
       border-top-left-radius: 0.375rem;
       border-top-right-radius: 0.375rem;
       transition: transform 0.3s ease-in-out;
@@ -62,22 +78,18 @@
       transform: scale(1.01);
     }
 
-    .card.financas video {
-      height: auto;
-      max-height: 350px;
-      object-fit: contain;
-    }
-
     .btn-github {
       background-color: #3399ff;
       border: none;
       width: 100%;
       margin-top: 10px;
       color: white;
+      transition: transform 0.2s, background-color 0.2s;
     }
 
     .btn-github:hover {
       background-color: #1a6ed8;
+      transform: scale(1.05);
     }
 
     footer {
@@ -88,6 +100,8 @@
       text-align: center;
       font-size: 0.95rem;
       letter-spacing: 0.5px;
+      position: relative;
+      z-index: 10;
     }
 
     footer .bi {
@@ -107,6 +121,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Canvas para fundo animado -->
+  <canvas id="starfield"></canvas>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -133,14 +150,14 @@
       <!-- Projeto 1 -->
       <div class="col-md-4" data-aos="fade-up">
         <div class="card h-100 shadow-sm">
-          <video class="card-img-top" controls poster="assets/thumb-jogo-velha.jpg">
-            <source src="assets/WhatsApp Video 2023-06-29 at 10.46.53.mp4" type="video/mp4">
+          <video class="card-img-top" controls poster="assets/thumb-jogo-velha.jpg" alt="Vídeo do Jogo da Velha">
+            <source src="assets/WhatsApp Video 2023-06-29 at 10.46.53.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
           </video>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Jogo da Velha</h5>
             <p class="card-text flex-grow-1">Projeto de IA com interface web: "Jogo da Idosa".</p>
-            <a href="https://github.com/miqueiascavalcant04/jogo-da-velha" target="_blank" class="btn btn-github mt-auto">
+            <a href="https://github.com/miqueiascavalcant04/jogo-da-velha" target="_blank" class="btn btn-github mt-auto" rel="noopener noreferrer">
               <i class="bi bi-github"></i> Ver Código
             </a>
           </div>
@@ -150,14 +167,14 @@
       <!-- Projeto 2 -->
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
         <div class="card shadow-sm text-center financas">
-          <video controls>
-            <source src="assets/Recording_20250112_110241.mp4" type="video/mp4">
+          <video controls alt="Vídeo do Aplicativo de Finanças">
+            <source src="assets/Recording_20250112_110241.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
           </video>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title text-primary">Aplicativo de Finanças</h5>
             <p class="card-text flex-grow-1">App Android moderno para controle de finanças pessoais.</p>
-            <a href="https://github.com/miqueiascavalcant04/MyFinance" target="_blank" class="btn btn-github mt-auto">
+            <a href="https://github.com/miqueiascavalcant04/MyFinance" target="_blank" class="btn btn-github mt-auto" rel="noopener noreferrer">
               <i class="bi bi-github"></i> Ver Código
             </a>
           </div>
@@ -167,14 +184,14 @@
       <!-- Projeto 3 -->
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
         <div class="card h-100 shadow-sm">
-          <video class="card-img-top" controls poster="assets/thumb-igreja.jpg">
-            <source src="assets/videos/igreja.mp4" type="video/mp4">
+          <video class="card-img-top" controls poster="assets/thumb-igreja.jpg" alt="Vídeo do Site da Igreja">
+            <source src="assets/videos/igreja.mp4" type="video/mp4" />
             Seu navegador não suporta vídeos.
           </video>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Site da Igreja</h5>
             <p class="card-text flex-grow-1">Site institucional com HTML, CSS e PHP puro.</p>
-            <a href="https://github.com/miqueiascavalcant04/igreja" target="_blank" class="btn btn-github mt-auto">
+            <a href="https://github.com/miqueiascavalcant04/igreja" target="_blank" class="btn btn-github mt-auto" rel="noopener noreferrer">
               <i class="bi bi-github"></i> Ver Código
             </a>
           </div>
@@ -187,10 +204,10 @@
   <!-- Footer -->
   <footer>
     <div class="mb-3">
-      <a href="https://github.com/miqueiascavalcant04" target="_blank" class="text-light mx-2">
+      <a href="https://github.com/miqueiascavalcant04" target="_blank" class="text-light mx-2" rel="noopener noreferrer">
         <i class="bi bi-github fs-4"></i>
       </a>
-      <a href="https://linkedin.com/in/seu-perfil" target="_blank" class="text-light mx-2">
+      <a href="https://linkedin.com/in/seu-perfil" target="_blank" class="text-light mx-2" rel="noopener noreferrer">
         <i class="bi bi-linkedin fs-4"></i>
       </a>
     </div>
@@ -205,6 +222,132 @@
       duration: 800,
       once: true
     });
+  </script>
+
+  <!-- Script Fundo Estrelas -->
+  <script>
+    (() => {
+      const canvas = document.getElementById('starfield');
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let stars = [];
+      const STAR_COUNT = 150;
+      const COMET_COUNT = 3;
+
+      function randomRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      }
+
+      class Star {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = randomRange(0, width);
+          this.y = randomRange(0, height);
+          this.radius = randomRange(0.4, 1.2);
+          this.alpha = randomRange(0.2, 1);
+          this.alphaChange = randomRange(0.002, 0.008);
+          this.fadingOut = Math.random() < 0.5;
+        }
+        update() {
+          if (this.fadingOut) {
+            this.alpha -= this.alphaChange;
+            if (this.alpha <= 0.2) {
+              this.fadingOut = false;
+            }
+          } else {
+            this.alpha += this.alphaChange;
+            if (this.alpha >= 1) {
+              this.fadingOut = true;
+            }
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha.toFixed(2)})`;
+          ctx.shadowColor = 'white';
+          ctx.shadowBlur = 5;
+          ctx.fill();
+        }
+      }
+
+      class Comet {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = randomRange(-width, 0);
+          this.y = randomRange(0, height / 2);
+          this.length = randomRange(100, 200);
+          this.speed = randomRange(6, 10);
+          this.size = randomRange(1.2, 2.5);
+          this.opacity = 1;
+          this.trail = [];
+        }
+        update() {
+          this.x += this.speed;
+          this.y += this.speed * 0.3;
+          this.trail.push({ x: this.x, y: this.y });
+          if (this.trail.length > this.length) this.trail.shift();
+          if (this.x - this.length > width || this.y > height) {
+            this.reset();
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          for (let i = this.trail.length - 1; i >= 0; i--) {
+            let point = this.trail[i];
+            let alpha = (i / this.trail.length) * this.opacity;
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha.toFixed(2)})`;
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+      }
+
+      function init() {
+        stars = [];
+        for (let i = 0; i < STAR_COUNT; i++) {
+          stars.push(new Star());
+        }
+        comets = [];
+        for (let i = 0; i < COMET_COUNT; i++) {
+          comets.push(new Comet());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+        stars.forEach(star => {
+          star.update();
+          star.draw();
+        });
+        comets.forEach(comet => {
+          comet.update();
+          comet.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        resize();
+        init();
+      });
+
+      resize();
+      init();
+      animate();
+    })();
   </script>
 </body>
 </html>
