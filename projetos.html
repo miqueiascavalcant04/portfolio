@@ -16,9 +16,11 @@
       color: #e0e0e0;
       font-family: 'Inter', sans-serif;
     }
+
     .navbar {
       background-color: #1f1f1f !important;
     }
+
     footer {
       background-color: #1f1f1f;
       color: #bbb;
@@ -26,18 +28,41 @@
       text-align: center;
       margin-top: 40px;
     }
+
     .card {
       background-color: #222;
       border: none;
       color: #ddd;
       transition: transform 0.3s;
     }
+
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 5px 15px rgba(51, 153, 255, 0.4);
     }
+
     .card-title {
       color: #3399ff;
+    }
+
+    video.card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 0.375rem;
+      border-top-right-radius: 0.375rem;
+    }
+
+    /* Card do projeto de finanças */
+    .card.financas {
+      height: auto !important;
+    }
+
+    .card.financas video {
+      width: 100%;
+      max-height: 450px;
+      object-fit: contain;
+      border-top-left-radius: 0.375rem;
+      border-top-right-radius: 0.375rem;
     }
   </style>
 </head>
@@ -63,26 +88,41 @@
     <h2 class="mb-5 text-center" data-aos="fade-up">Projetos</h2>
     <div class="row g-4">
 
+      <!-- Projeto 1 -->
       <div class="col-md-4" data-aos="fade-up">
         <div class="card h-100 shadow-sm">
+          <video class="card-img-top" controls poster="assets/WhatsApp Video 2023-06-29 at 10.46.53.mp4">
+            <source src="assets/WhatsApp Video 2023-06-29 at 10.46.53.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
           <div class="card-body">
-            <h5 class="card-title">Sistema de Inventário</h5>
-            <p class="card-text">Web app para registrar e controlar toners com Flask.</p>
+            <h5 class="card-title">Jogo da Velha</h5>
+            <p class="card-text">Projeto de IA - "Jogo da Idosa" (hospedagem web)</p>
           </div>
         </div>
       </div>
 
+      <!-- Projeto 2 -->
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm">
+        <div class="card shadow-sm text-center financas">
+          <video controls>
+            <source src="assets/Recording_20250112_110241.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
           <div class="card-body">
-            <h5 class="card-title">Aplicativo de Finanças</h5>
+            <h5 class="card-title text-primary">Aplicativo de Finanças</h5>
             <p class="card-text">App Android para controle de receitas e despesas.</p>
           </div>
         </div>
       </div>
 
+      <!-- Projeto 3 -->
       <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
         <div class="card h-100 shadow-sm">
+          <video class="card-img-top" controls poster="assets/thumb-igreja.jpg">
+            <source src="assets/videos/igreja.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
           <div class="card-body">
             <h5 class="card-title">Site da Igreja</h5>
             <p class="card-text">Site institucional feito com HTML, CSS e PHP.</p>
