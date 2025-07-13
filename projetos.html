@@ -30,6 +30,11 @@
       display: block;
     }
 
+    main.container {
+      position: relative;
+      z-index: 1; /* garante que o conteúdo fique acima do canvas */
+    }
+
     .navbar {
       background-color: #1f1f1f !important;
       z-index: 10;
@@ -231,6 +236,7 @@
       const ctx = canvas.getContext('2d');
       let width, height;
       let stars = [];
+      let comets = [];
       const STAR_COUNT = 150;
       const COMET_COUNT = 3;
 
