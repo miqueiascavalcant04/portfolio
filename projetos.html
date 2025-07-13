@@ -21,12 +21,16 @@
       background-color: #1f1f1f !important;
     }
 
-    footer {
-      background-color: #1f1f1f;
-      color: #bbb;
-      padding: 20px 10px;
-      text-align: center;
-      margin-top: 40px;
+    a.nav-link, a.nav-link.active {
+      color: #e0e0e0;
+    }
+
+    a.nav-link:hover {
+      color: #3399ff;
+    }
+
+    h2 {
+      color: #fff;
     }
 
     .card {
@@ -37,37 +41,74 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(51, 153, 255, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(51, 153, 255, 0.3);
     }
 
     .card-title {
       color: #3399ff;
     }
 
-    video.card-img-top {
+    video.card-img-top, .card video {
       height: 200px;
       object-fit: cover;
+      width: 100%;
       border-top-left-radius: 0.375rem;
       border-top-right-radius: 0.375rem;
+      transition: transform 0.3s ease-in-out;
     }
 
-    /* Card do projeto de finanças */
-    .card.financas {
-      height: auto !important;
+    .card video:hover {
+      transform: scale(1.01);
     }
 
     .card.financas video {
-      width: 100%;
-      max-height: 450px;
+      height: auto;
+      max-height: 350px;
       object-fit: contain;
-      border-top-left-radius: 0.375rem;
-      border-top-right-radius: 0.375rem;
+    }
+
+    .btn-github {
+      background-color: #3399ff;
+      border: none;
+      width: 100%;
+      margin-top: 10px;
+      color: white;
+    }
+
+    .btn-github:hover {
+      background-color: #1a6ed8;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #1f1f1f, #121212);
+      color: #bbb;
+      padding: 20px 10px;
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    footer .bi {
+      transition: transform 0.2s;
+    }
+
+    footer .bi:hover {
+      transform: scale(1.2);
+      color: #3399ff;
+    }
+
+    @media (max-width: 576px) {
+      video.card-img-top {
+        height: 180px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="index.html">Miqueias Crispim</a>
@@ -84,6 +125,7 @@
     </div>
   </nav>
 
+  <!-- Conteúdo -->
   <main class="container py-5">
     <h2 class="mb-5 text-center" data-aos="fade-up">Projetos</h2>
     <div class="row g-4">
@@ -91,13 +133,16 @@
       <!-- Projeto 1 -->
       <div class="col-md-4" data-aos="fade-up">
         <div class="card h-100 shadow-sm">
-          <video class="card-img-top" controls poster="assets/WhatsApp Video 2023-06-29 at 10.46.53.mp4">
+          <video class="card-img-top" controls poster="assets/thumb-jogo-velha.jpg">
             <source src="assets/WhatsApp Video 2023-06-29 at 10.46.53.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
           </video>
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Jogo da Velha</h5>
-            <p class="card-text">Projeto de IA - "Jogo da Idosa" (hospedagem web)</p>
+            <p class="card-text flex-grow-1">Projeto de IA com interface web: "Jogo da Idosa".</p>
+            <a href="https://github.com/miqueiascavalcant04/jogo-da-velha" target="_blank" class="btn btn-github mt-auto">
+              <i class="bi bi-github"></i> Ver Código
+            </a>
           </div>
         </div>
       </div>
@@ -109,9 +154,12 @@
             <source src="assets/Recording_20250112_110241.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
           </video>
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title text-primary">Aplicativo de Finanças</h5>
-            <p class="card-text">App Android para controle de receitas e despesas.</p>
+            <p class="card-text flex-grow-1">App Android moderno para controle de finanças pessoais.</p>
+            <a href="https://github.com/miqueiascavalcant04/MyFinance" target="_blank" class="btn btn-github mt-auto">
+              <i class="bi bi-github"></i> Ver Código
+            </a>
           </div>
         </div>
       </div>
@@ -123,9 +171,12 @@
             <source src="assets/videos/igreja.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
           </video>
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Site da Igreja</h5>
-            <p class="card-text">Site institucional feito com HTML, CSS e PHP.</p>
+            <p class="card-text flex-grow-1">Site institucional com HTML, CSS e PHP puro.</p>
+            <a href="https://github.com/miqueiascavalcant04/igreja" target="_blank" class="btn btn-github mt-auto">
+              <i class="bi bi-github"></i> Ver Código
+            </a>
           </div>
         </div>
       </div>
@@ -133,12 +184,27 @@
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Miqueias Crispim</p>
+    <div class="mb-3">
+      <a href="https://github.com/miqueiascavalcant04" target="_blank" class="text-light mx-2">
+        <i class="bi bi-github fs-4"></i>
+      </a>
+      <a href="https://linkedin.com/in/seu-perfil" target="_blank" class="text-light mx-2">
+        <i class="bi bi-linkedin fs-4"></i>
+      </a>
+    </div>
+    <p>© 2025 Miqueias Crispim. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, once: true });</script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 </html>
